@@ -1,4 +1,4 @@
-package steps;
+package Steps;
 
 import Data.JsonDataReader;
 import com.vodefone.pages.Accountpage;
@@ -6,7 +6,6 @@ import com.vodefone.pages.Homepage;
 import com.vodefone.pages.Loginpage;
 import com.vodefone.pages.Registerpage;
 import com.vodefone.tests.TestBaseCucumber;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -16,14 +15,16 @@ import org.junit.Assert;
 import java.io.IOException;
 
 
-public class Registersteps extends TestBaseCucumber {
+public class RegisterSteps extends TestBaseCucumber {
 
     Homepage homeobject;
     Loginpage loginobject;
     Registerpage registerobject;
     Accountpage accountobject;
 
-    public Registersteps() throws IOException {
+
+
+    public RegisterSteps() throws IOException {
     }
 
     @Given("user in home page")

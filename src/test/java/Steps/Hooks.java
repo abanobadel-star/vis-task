@@ -1,4 +1,4 @@
-package steps;
+package Steps;
 
 import com.vodefone.tests.TestBaseCucumber;
 import io.cucumber.java.After;

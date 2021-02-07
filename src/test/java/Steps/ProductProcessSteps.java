@@ -1,4 +1,4 @@
-package steps;
+package Steps;
 
 import com.vodefone.pages.BlouseProductPage;
 import com.vodefone.pages.Processcheckoutpage;

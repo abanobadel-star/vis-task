@@ -1,4 +1,7 @@
+#noinspection CucumberUndefinedStep
 Feature:test register functionality
+
+  @Regression
   Scenario:register with valid data
     Given  user in home page
     When  user enter "email" and click on create an account

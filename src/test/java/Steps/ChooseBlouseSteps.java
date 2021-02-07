@@ -1,4 +1,4 @@
-package steps;
+package Steps;
 
 import com.vodefone.pages.Accountpage;
 import com.vodefone.pages.Homepage;

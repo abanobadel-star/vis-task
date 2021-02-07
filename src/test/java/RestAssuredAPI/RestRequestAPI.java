@@ -27,12 +27,12 @@ import static org.hamcrest.Matchers.*;
 
 
 
-public class Rest {
+public class RestRequestAPI {
 
     public static Properties prop;
     static String configpath=System.getProperty("user.dir")+"\\src\\test\\java\\com\\vodefone\\configuration\\config.properties"; // to get path for config properties file
 
-    public  Rest() throws IOException {
+    public RestRequestAPI() throws IOException {
         prop=new Properties();
         FileInputStream file=new FileInputStream(configpath);
         prop.load(file);

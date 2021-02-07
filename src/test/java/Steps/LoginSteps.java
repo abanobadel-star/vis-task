@@ -1,4 +1,4 @@
-package steps;
+package Steps;
 
 import Data.JsonDataReader;
 import com.vodefone.pages.Accountpage;
