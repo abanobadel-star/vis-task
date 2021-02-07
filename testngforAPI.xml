@@ -4,10 +4,6 @@
    <parameter name="browser"  value="chrome" />
   <test thread-count="5" name="Test">
     <classes>
-         <class name="com.vodefone.tests.RegisterationTest"/>
-          <class name="com.vodefone.tests.LoginTest"/>
-          <class name="com.vodefone.tests.ChooseproductTest"/>
-          <class name="com.vodefone.tests.ProductTest"/>
             <class name="RestAssuredAPI.Rest"/>
     </classes>
   </test> <!-- Test -->

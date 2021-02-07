@@ -100,7 +100,7 @@ public class Rest {
         RequestSpecification httprequest=RestAssured.given();
         Response response=httprequest.request(Method.GET);
         String responsebody=response.getBody().asString();
-        System.out.println("reponse body is :"+responsebody);
+        System.out.println("response body is :"+responsebody);
 
          //assert on status code
         int statuscode=response.getStatusCode();
