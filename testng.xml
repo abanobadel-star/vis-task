@@ -8,7 +8,7 @@
           <class name="com.vodefone.tests.LoginTest"/>
           <class name="com.vodefone.tests.ChooseproductTest"/>
           <class name="com.vodefone.tests.ProductTest"/>
-           <class name="RestAssuredAPI.RestRequestAPI"/>
+          <class name="RestAssuredAPI.RestRequestAPI"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -1,6 +1,7 @@
 package Steps;
 
 import Data.JsonDataReader;
+import com.github.javafaker.Faker;
 import com.vodefone.pages.Accountpage;
 import com.vodefone.pages.Homepage;
 import com.vodefone.pages.Loginpage;
@@ -21,7 +22,8 @@ public class RegisterSteps extends TestBaseCucumber {
     Loginpage loginobject;
     Registerpage registerobject;
     Accountpage accountobject;
-
+    Faker fakerData=new Faker();
+    String emailfaker=fakerData.internet().emailAddress();
 
 
     public RegisterSteps() throws IOException {
@@ -41,7 +43,9 @@ public class RegisterSteps extends TestBaseCucumber {
         loginobject=new Loginpage(driver);
         JsonDataReader jsonreader = new JsonDataReader();
         jsonreader.JsonReader();
-        loginobject.send_email_to_create_new_account(jsonreader.email);
+       // loginobject.send_email_to_create_new_account(jsonreader.email);
+         loginobject.send_email_to_create_new_account(emailfaker);
+
 
     }
     @When("enter {string} and {string} and {string} and {string} and {string} and {string} and {string} and {string} and {string} and {string} and {string} and click on register button")
@@ -49,7 +53,7 @@ public class RegisterSteps extends TestBaseCucumber {
         registerobject=new Registerpage(driver);
         JsonDataReader jsonreader = new JsonDataReader();
         jsonreader.JsonReader();
-      registerobject.RegisterNewUser(jsonreader.firstname,jsonreader.lastname,jsonreader.email,jsonreader.password,jsonreader.address,jsonreader.city,jsonreader.state,jsonreader.zipcode,jsonreader.country,jsonreader.mobile,jsonreader.alias);
+      registerobject.RegisterNewUser(jsonreader.firstname,jsonreader.lastname,emailfaker,jsonreader.password,jsonreader.address,jsonreader.city,jsonreader.state,jsonreader.zipcode,jsonreader.country,jsonreader.mobile,jsonreader.alias);
     }
     @Then("user register successfully")
     public void user_register_successfully()

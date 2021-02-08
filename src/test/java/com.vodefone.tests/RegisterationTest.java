@@ -3,6 +3,7 @@ package com.vodefone.tests;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import com.github.javafaker.Faker;
 import org.json.simple.parser.ParseException;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -27,7 +28,9 @@ public class RegisterationTest extends TestBase {
 	Registerpage registerobject;
 	Loginpage loginobject;
 	Accountpage accountobject;
-	
+	Faker fakerData=new Faker();
+	String emailfaker=fakerData.internet().emailAddress();
+
 
 
 	@DataProvider(name="register")             //data provider with link between script and execl sheet
@@ -50,10 +53,12 @@ public class RegisterationTest extends TestBase {
         homeobject =new Homepage(driver);
 		homeobject.openLoginPage();
 		loginobject=new Loginpage(driver);
-		loginobject.send_email_to_create_new_account(jsonreader.email);
-		
+		//loginobject.send_email_to_create_new_account(jsonreader.email);
+		loginobject.send_email_to_create_new_account(emailfaker);
+
+
 		registerobject=new Registerpage(driver);
-		registerobject.RegisterNewUser(fname, lname, jsonreader.email, jsonreader.password, address, city, state,  jsonreader.zipcode, country, jsonreader.mobile, alixaddress);
+		registerobject.RegisterNewUser(fname, lname, emailfaker, jsonreader.password, address, city, state,  jsonreader.zipcode, country, jsonreader.mobile, alixaddress);
 		accountobject=new Accountpage(driver);
 		Assert.assertTrue(accountobject.logoutbutton.isDisplayed());
 		accountobject.logout();
