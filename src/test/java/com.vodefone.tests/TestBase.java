@@ -8,6 +8,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import cucumber.api.testng.AbstractTestNGCucumberTests;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
@@ -48,17 +49,20 @@ public class TestBase  {   //this class is the base "parent" for all class test 
 		if(browsername.equalsIgnoreCase("chrome"))          // work with chrome driver
 		{
 
-			System.setProperty("webdriver.chrome.driver", chromepath); 
+		//	System.setProperty("webdriver.chrome.driver", chromepath);
+			WebDriverManager.chromedriver().setup();
 			driver=new ChromeDriver();
 		}
 		else if(browsername.equalsIgnoreCase("firefox"))   //work  with firefox driver
 		{
-			System.setProperty("webdriver.gecko.driver", firefoxpath);
+			//System.setProperty("webdriver.gecko.driver", firefoxpath);
+			WebDriverManager.firefoxdriver().setup();
 			driver=new FirefoxDriver();
 		}
 		else if(browsername.equalsIgnoreCase("internetexplorer")) //work with internet explorer
 		{
-			System.setProperty("webdriver.ie.driver", InternetExplorerpath);
+			//System.setProperty("webdriver.ie.driver", InternetExplorerpath);
+			WebDriverManager.edgedriver().setup();
 			driver=new InternetExplorerDriver();
 		}
 
